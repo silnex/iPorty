@@ -9,5 +9,6 @@ Port based IP search python script
 # Task list
 - [x] Ping
 - [x] TCP Ping
-- [ ] Make IP list using ASN       
-- [ ] Scan port using list of IPs  
+- [x] Get IP range using ASN
+- [ ] Make IP list using IP range
+- [ ] Scan port using list of IPs
