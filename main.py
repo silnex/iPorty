@@ -2,22 +2,20 @@ import sys
 import socket
 # targetip = socket.gethostbyname(hostname)
 
-def getIPlists(iprefix = "192.168.0"):
-    ''' 
-    '''
+def GetIPlists(iprefix = "192.168.0"):
+    ''' GetIPlists is return IP list all of last 8bit (except 0 and 255)
+    GetIPlists will change return list that IPs from ASN     '''
     iplists = []
     for num in range(0,255):
         iplists.append(iprefix + "." + str(num))
     return iplists
 
 def main():
-    '''
-    iprefix = sys.argv[1]
-    port = sys.argv[2]
-    '''
+    # iprefix = sys.argv[1]
+    # port = sys.argv[2]
     iprefix = "192.168.0"
     port = sys
-    iplists = getIPlists(iprefix)
+    iplists = GetIPlists(iprefix)
     for targetip in iplists:
         try:
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -33,8 +31,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# ========Todo========
-# 1. ping 구현        done
-# 2. tcp ping 구현    done
-# 3. 나라별 ip range
