@@ -1,21 +1,14 @@
 import sys
 import socket
-# targetip = socket.gethostbyname(hostname)
+import GetIP
 
-def GetIPlists(iprefix = "192.168.0"):
-    ''' GetIPlists is return IP list all of last 8bit (except 0 and 255)
-    GetIPlists will change return list that IPs from ASN     '''
-    iplists = []
-    for num in range(0,255):
-        iplists.append(iprefix + "." + str(num))
-    return iplists
-
-def main():
-    # iprefix = sys.argv[1]
-    # port = sys.argv[2]
-    iprefix = "192.168.0"
-    port = sys
-    iplists = GetIPlists(iprefix)
+def iPortyScan(ASNumber = "AS4766", port = "22"):
+    '''
+    ASNumber is Autonomous System Number,
+    port value is 
+    'AS4766' is LG AS Number
+    '''
+    iplists = GetIP.List(GetIP.Range(ASNumber))
     for targetip in iplists:
         try:
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -30,4 +23,11 @@ def main():
     input("Press Enter to EXIT")
 
 if __name__ == "__main__":
-    main()
+    iPortyScan()
+'''
+South Korea ISP ASN list
+http://www.cidr-report.org/cgi-bin/as-report?as=AS4766&view=2.0
+http://www.cidr-report.org/cgi-bin/as-report?as=AS9318&view=2.0
+http://www.cidr-report.org/cgi-bin/as-report?as=AS38091&view=2.0
+http://www.cidr-report.org/cgi-bin/as-report?as=AS17858&view=2.0
+'''

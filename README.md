@@ -7,8 +7,9 @@ Port based IP search python script
 그러면 보통은 사용하지 않는 포트가 열려있는 곳에 ssh접속을하면 내 서버 IP를 찾을 수 있음  
 
 # Task list
-- [x] Ping
-- [x] TCP Ping
-- [x] Get IP range using ASN
-- [ ] Make IP list using IP range
-- [ ] Scan port using list of IPs
+- [x] Ping.
+- [x] TCP Ping.
+- [x] Get IP range using ASN.
+- [x] Make IP list using IP range.
+- [x] Scan port using list of IPs.
+- [ ] Remove not meaning AS number and IP range.(sometime...)
